@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Rolex Exit Review</title>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  :root {
+    --page-margin: 5mm;
+    --bg: #f8f7f7;
+    --card: #ffffff;
+    --text: #000000;
+    --muted: #8f8cb0;
+    --border: #e5e5e5;
+    --soft-border: #e6e6e6;
+    --soft-bg: #fafafa;
+    --highlight: #cdd9ac;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: var(--page-margin);
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .preheader {
+    display: none !important;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    font-size: 1px;
+    line-height: 1px;
+    max-height: 0;
+    max-width: 0;
+  }
+
+  .page-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+    background: var(--bg);
+  }
+
+  .page {
+    width: calc(210mm - (var(--page-margin) * 2));
+    min-height: calc(297mm - (var(--page-margin) * 2));
+    background: var(--bg);
+  }
+
+  .card {
+    width: 100%;
+    min-height: calc(297mm - (var(--page-margin) * 2));
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 6mm 6mm 5mm 6mm;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .headline-label {
+    font-size: 7px;
+    line-height: 1.15;
+    letter-spacing: 1.05px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 2px 0;
+  }
+
+  .headline {
+    font-size: 18px;
+    line-height: 1.08;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 6px 0;
+  }
+
+  .body-text {
+    font-size: 10.4px;
+    line-height: 1.26;
+    color: var(--text);
+    margin: 0;
+  }
+
+  .small-text {
+    font-size: 9.5px;
+    line-height: 1.24;
+    color: var(--text);
+    margin: 0;
+  }
+
+  .metric-title {
+    font-size: 7px;
+    line-height: 1.15;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+
+  .metric-value {
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .section-title {
+    font-size: 11.2px;
+    line-height: 1.15;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 4px 0;
+  }
+
+  .highlight-box {
+    background: var(--highlight);
+    border-radius: 9px;
+    padding: 7px 9px;
+  }
+
+  .soft-box,
+  .metric-box {
+    background: var(--soft-bg);
+    border: 1px solid var(--soft-border);
+    border-radius: 9px;
+  }
+
+  .soft-box {
+    padding: 7px 9px;
+  }
+
+  .metric-box {
+    padding: 7px 5px;
+    text-align: center;
+    min-height: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .number-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #000000;
+    color: #ffffff;
+    font-size: 9px;
+    line-height: 16px;
+    font-weight: 700;
+    text-align: center;
+    display: inline-block;
+  }
+
+  .layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .section {
+    margin-bottom: 8px;
+  }
+
+  .section:last-child {
+    margin-bottom: 0;
+  }
+
+  .metrics-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin: 0;
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    gap: 6px;
+    margin: 0 0 4px 0;
+    align-items: start;
+  }
+
+  .step:last-child {
+    margin-bottom: 0;
+  }
+
+  .mb-4 { margin-bottom: 4px; }
+  .mb-5 { margin-bottom: 5px; }
+  .mb-6 { margin-bottom: 6px; }
+  .mb-7 { margin-bottom: 7px; }
+  .mb-8 { margin-bottom: 8px; }
+
+  .keep-together,
+  .highlight-box,
+  .soft-box,
+  .metric-box,
+  .step,
+  .section,
+  .section-title {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  @media screen and (max-width: 900px) {
+    .page {
+      width: 100%;
+      min-height: auto;
+    }
+
+    .card {
+      min-height: auto;
+      padding: 18px;
+    }
+
+    .layout {
+      display: block;
+    }
+
+    .section {
+      margin-bottom: 12px;
+    }
+  }
+
+  @media print {
+    html,
+    body {
+      width: 100%;
+      height: auto;
+      background: var(--bg);
+    }
+
+    .page-wrap {
+      padding: 0;
+      display: block;
+    }
+
+    .page {
+      width: 100%;
+      min-height: auto;
+      margin: 0;
+    }
+
+    .card {
+      min-height: auto;
+      border-radius: 10px;
+    }
+  }
+</style>
+</head>
+
+<body>
+<div class="preheader">Executive summary of what happened, how we handled it, how we took accountability, and what we learned.</div>
+
+<div class="page-wrap">
+  <div class="page">
+    <div class="card">
+      <div class="headline-label">Splint Invest</div>
+      <div class="headline">Rolex Exit Review</div>
+
+      <div class="layout">
+
+        <div class="section">
+          <p class="body-text">
+            Executive summary of what happened, how we handled it, how we took accountability, and what we learned.
+          </p>
+        </div>
+
+        <div class="section">
+          <div class="highlight-box">
+            <p class="body-text">
+              Between February and July 2022, three Rolex watches — the Sea-Dweller, Air-King, and Submariner — were released on our platform based on strong historical performance, high liquidity, and sustained market demand. The assets were fully exited in March 2026 after a prolonged market correction, resulting in negative returns of <strong>-45%</strong>, <strong>-53%</strong>, and <strong>-63%</strong>.
+            </p>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Timeline and data</div>
+          <div class="soft-box">
+            <p class="small-text mb-5"><strong>Feb 2022:</strong> Release of the Rolex Sea-Dweller. Acquisition price: €17,400. Purchase price to users: €19,500.</p>
+            <p class="small-text mb-5"><strong>Apr 2022:</strong> Release of the Rolex Air-King. Acquisition price: €14,300. Purchase price to users: €16,350.</p>
+            <p class="small-text mb-5"><strong>Jul 2022:</strong> Release of the Rolex Submariner. Acquisition price: €18,800. Purchase price to users: €21,100.</p>
+            <p class="small-text mb-5"><strong>2022–2025:</strong> After the peak in early 2022, the luxury watch market corrected sharply. Secondary market prices fell by around 30–35% between 2024 and 2025.</p>
+            <p class="small-text"><strong>Mar 2026:</strong> All three assets were fully exited. Final realized losses were -45% for the Submariner, -53% for the Sea-Dweller, and -63% for the Air-King.</p>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">How we handled it</div>
+
+          <div class="step">
+            <div><span class="number-dot">1</span></div>
+            <div>
+              <p class="body-text">The assets were monitored through regular portfolio review, which identified that performance had deviated materially from the original investment case.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div><span class="number-dot">2</span></div>
+            <div>
+              <p class="body-text">A structured recovery analysis was launched, including a Monte Carlo simulation using Rolex secondary market data from January 31, 2017 to July 31, 2025.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div><span class="number-dot">3</span></div>
+            <div>
+              <p class="body-text">The simulation showed that the probability of full recovery within 5 years was below 50%.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div><span class="number-dot">4</span></div>
+            <div>
+              <p class="body-text">Based on these findings, affected investors were invited to vote on whether to hold or sell the assets.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div><span class="number-dot">5</span></div>
+            <div>
+              <p class="body-text">All three watches received majority approval to sell. Following this, the assets were liquidated and proceeds were distributed.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">How we took accountability</div>
+          <div class="highlight-box">
+            <p class="body-text">
+              We redistributed 100% of the platform fees charged at initial release to investors to reduce the losses. This was done because we do not want to make money in cases where our investors lost money.
+            </p>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="metrics-3">
+            <div class="metric-box">
+              <div class="metric-title">Submariner</div>
+              <div class="metric-value">€1,504</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-title">Sea-Dweller</div>
+              <div class="metric-value">€1,392</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-title">Air-King</div>
+              <div class="metric-value">€1,144</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">What we learned</div>
+          <div class="soft-box">
+            <p class="body-text mb-5">• Timing matters. These assets were acquired close to a market peak.</p>
+            <p class="body-text mb-5">• Liquidity is not constant. Even strong brands like Rolex can become harder to sell in a downturn.</p>
+            <p class="body-text mb-5">• Past performance is not enough. Historical returns must be tested against the actual drivers behind them.</p>
+            <p class="body-text">• We strengthened our market analysis, pricing validation, sourcing partnerships, and category monitoring going forward.</p>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="soft-box">
+            <p class="body-text mb-5">These outcomes are clearly disappointing. What matters is how such situations are handled.</p>
+            <p class="body-text">In this case, we chose to analyse the situation, involve our community, take accountability, and improve our process rather than ignore the issue.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
